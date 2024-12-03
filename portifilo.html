@@ -13,27 +13,7 @@
             margin: 0;
             padding: 0;
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: flex-end;
-        }
-        nav button {
-            background: none;
-            border: none;
-            color: #fff;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-        nav button a {
-            text-decoration: none;
-            color: #fff;
-        }
+        
         main {
             padding: 20px;
         }
@@ -61,17 +41,37 @@
             padding: 10px 0;
             text-align: center;
         }
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            width: 80%;
+        }
+        .navbar a {
+            margin: 0 10px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+        .navbar a:hover {
+            color: #f4f4f4;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <button><a href="#home">Home</a></button>
-            <button><a href="#about">About</a></button>
-            <button><a href="#projects">Projects</a></button>
-            <button><a href="#contact">Contact</a></button>
-        </nav>
-    </header>
+    <div class="navbar">
+        <a href="#home">🏠 Home</a>
+        <a href="#about">👤 About</a>
+        <a href="#skills">💻 Skills</a>
+        <a href="#projects">📁 Projects</a>
+        <a href="#contact">📧 Contact</a>
+    </div>
     <main>
         <section id="home">
             <h1>Welcome to my portfolio website!</h1>
@@ -83,16 +83,200 @@
             <p>I am a Python full-stack developer with a strong foundation in both back-end and front-end technologies, currently expanding my expertise through a comprehensive course at ScholarLogic. I have hands-on experience developing blockchain solutions to enhance transparency and efficiency in the agricultural supply chain and have built a Django project called My Dairy. I’m proficient in Django and other essential tools. My approach combines strategic analysis, collaborative insights, and a task-oriented focus, enabling me to tackle complex challenges with agility and precision.</p>
 
         </section>
+        <section id="skills">
+        <h1>Skills</h1>
+        <p>I am proficient in the following technologies:</p>
+        <ul>
+            <li>
+                Django
+                <div class="bar-graph">
+                    <div class="bar" style="width: 90%; background-color: #4CAF50;"></div>
+                    <span>90%</span>
+                </div>
+            </li>
+            <li>
+                Python
+                <div class="bar-graph">
+                    <div class="bar" style="width: 95%; background-color: #4CAF50;"></div>
+                    <span>95%</span>
+                </div>
+            </li>
+            <li>
+                Java
+                <div class="bar-graph">
+                    <div class="bar" style="width: 80%; background-color: #4CAF50;"></div>
+                    <span>80%</span>
+                </div>
+            </li>
+            <li>
+                HTML
+                <div class="bar-graph">
+                    <div class="bar" style="width: 85%; background-color: #4CAF50;"></div>
+                    <span>85%</span>
+                </div>
+            </li>
+            <li>
+                CSS
+                <div class="bar-graph">
+                    <div class="bar" style="width: 90%; background-color: #4CAF50;"></div>
+                    <span>90%</span>
+                </div>
+            </li>
+            <li></li>
+                JavaScript
+                <div class="bar-graph">
+                    <div class="bar" style="width: 73%; background-color: #4CAF50;"></div>
+                    <span>73%</span>
+                </div>
+            </li>
+            <li></li>
+                Git
+                <div class="bar-graph">
+                    <div class="bar" style="width: 65%; background-color: #4CAF50;"></div>
+                    <span>65%</span>
+                </div>
+            </li>
+        </ul>
+        <style>
+            .bar-graph {
+                width: 100%;
+                height: 20px;
+                background-color: #ccc;
+                border-radius: 5px;
+                position: relative;
+            }
+            .bar {
+                height: 20px;
+                border-radius: 5px;
+            }
+            .bar-graph span {
+                position: absolute;
+                right: 0;
+                top: 0;
+                font-size: 12px;
+            }
+        </style>
+        </section>
         <section id="projects">
             <h1>Projects</h1>
-            <ul>
-                <li>
-                    <h2>Project 1</h2>
-                    <p>This is a brief description of project 1.</p>
+            <ul >
+                    <h2>Project 1 </h2>
+                    <details>
+                        <summary>Note my Dairy</summary>
+                    <li >
+
+                    <p>The Digital Diary/Photo Sharing Application is a Django-based platform that combines personal diary features, photo sharing, and advertisement integration. It provides a secure and user-friendly space for users to document and share their experiences while enabling monetization through ads.</p>
+                    <p>Key Features:</p>
+                    <ul>
+                        <button id="show-btn">User Authentication System</button>
+                        <ul id="auth-features" style="display: none;">
+                            <li style="margin-left: 30px;">Sign Up: Allows new users to register.</li>
+                            <li style="margin-left: 30px;">Login: Secure token-based authentication with a 12-hour expiry.</li>
+                            <li style="margin-left: 30px;">Logout: Ensures safe session termination.</li>
+                        </ul>
+                        <br>
+                        
+                        <button id="show-btn2">Personal Diary Pages</button>
+                        <ul id="auth-features2" style="display: none;">
+                            <li style="margin-left: 30px;">Create diary entries combining text and images.</li>
+                            <li style="margin-left: 30px;">Edit, view, and delete entries.</li>
+                            <li style="margin-left: 30px;">Seamless navigation with next/previous functionality.</li>
+                            <li style="margin-left: 30px;">Date-based filtering for easy access to past entries.</li>
+                        </ul>
+                        
+                        <li>Image Management :</li>
+                        <li style="margin-left: 30px;">Upload and manage photos with robust file handling.</li>
+                        <li>Contact System : </li>
+                        <li style="margin-left: 30px;">A contact form integrated with SMTP (Gmail) for user queries.</li>
+                        <li>Advertisement Integration :</li>
+                        <li style="margin-left: 30px;">Display ads using the AdsImage model to generate revenue.</li>
+                    </ul>
+                    <p>Technical Implementation :</p>
+                    <ul>
+                        <li style="margin-left: 30px;">Framework: Django for rapid development and scalability.</li>
+                        <li style="margin-left: 30px;">Authentication: Custom token-based authentication ensures user security.</li>
+                        <li style="margin-left: 30px;">Database: Django ORM for defining and managing models like MyPage and AdsImage.</li>
+                        <li style="margin-left: 30px;">File Handling: Supports image uploads for diary entries.</li>
+                        <li style="margin-left: 30px;">Email Integration: Secure SMTP configuration for Gmail.</li>
+                    </ul>
+                    <p>Core Components:</p>
+                    <ul>
+                        <li style="margin-left: 30px;">User Management: Handles authentication and session security.</li>
+                        <li style="margin-left: 30px;">Diary Features: Enables personal expression and organization.</li>
+                        <li style="margin-left: 30px;">Advertisement Module: Adds monetization opportunities.</li>
+                        <li style="margin-left: 30px;">Navigation Views: Smooth transitions between core functionalities.</li>
+                    </ul>
+                    <p>Views and Functionalities:</p>
+                    <ul>
+                        <li style="margin-left: 30px;">Authentication Views:</li>
+                        <ul>
+                            <li style="margin-left: 60px;">sign_up(), log_in(), logout()</li>
+                            <li style="margin-left: 60px;">Manage user sessions and secure access.</li>
+                        </ul>
+                        <li style="margin-left: 30px;">Diary Management:</li>
+                        <ul>
+                            <li style="margin-left: 60px;">MyPageView (Class-based view)</li>
+                            <li style="margin-left: 60px;">Methods like user_details(), delete_page(), view_page_details()</li>
+                            <li style="margin-left: 60px;">Provide CRUD functionality for diary entries.</li>
+                        </ul>
+                        <li style="margin-left: 30px;">Contact and Info:</li>
+                         <ul>
+                            <li style="margin-left: 60px;">home(), about_us(), contact_us()</li>
+                            <li style="margin-left: 60px;">Offer static and interactive pages.</li>
+                        </ul>
+                        <li style="margin-left: 30px;">Advertisement Views:</li>
+                        <ul>
+                            <li style="margin-left: 60px;">ads_image() to handle ad content.</li>
+                        </ul>
+                    </ul>
+                    <p>Security Measures:</p>
+                    <ul>
+                        <li style="margin-left: 30px;">Custom token-based authentication with token expiry for enhanced security.</li>
+                        <li style="margin-left: 30px;">Protected routes to restrict unauthorized access.</li>
+                        <li style="margin-left: 30px;">Secure session and email configurations.</li>
+                        <li style="margin-left: 30px;">Ensures data privacy through user-specific access controls.</li>
+                    </ul>
+                    <p>This project showcases an effective mix of personal utility, robust security, and monetization potential, making it versatile and practical for modern users. Would you like help with refining specific parts or preparing for a demo?</p>
+                    
                 </li>
+            </details>
                 <li>
                     <h2>Project 2</h2>
-                    <p>This is a brief description of project 2.</p>
+                    <details>
+                    <summary><b>Agricultural Product Supply Chain Management System</b></summary>
+                    <p>This project leverages blockchain technology to create a secure, transparent, and decentralized platform for managing agricultural product logistics. It ensures accurate and immutable data transfer among stakeholders, streamlining the supply chain process.</p>
+                    <p>Key Features:</p>
+                    <ul>
+                        <li style="margin-left: 30px;">Decentralized and Transparent Data Management: Blockchain ensures consistent and trustworthy data access for all stakeholders.</li>
+                        <li style="margin-left: 30px;">Immutable Ledger for Transaction Tracking: Records every step of the supply chain in an immutable blockchain ledger, preventing tampering and misinformation.</li>
+                        <li style="margin-left: 30px;">Credible Market Information: Provides reliable data on market trends, product quality, and pricing, supporting informed decision-making and fair trade practices.</li>
+                        <li style="margin-left: 30px;">Smart Contract Integration: Automates processes like payment releases, order confirmations, and quality checks, ensuring efficient and error-free transactions.</li>
+                        <li style="margin-left: 30px;">Product Verification: Enables consumers to verify the authenticity and origin of agricultural products using QR codes or unique identifiers.</li>
+                    </ul>
+                    <p>Technical Implementation:</p>
+                    <ul>
+                        <li style="margin-left: 30px;">Frontend Technologies: JavaScript for dynamic and responsive web interfaces, HTML/CSS for user-friendly design and presentation.</li>
+                        <li style="margin-left: 30px;">Backend Technologies: Java for core application logic, including blockchain integration and smart contract execution, MySQL for storing supplementary data.</li>
+                        <li style="margin-left: 30px;">Blockchain Integration: Stores immutable transaction records on the blockchain, ensuring decentralized and transparent data sharing.</li>
+                        <li style="margin-left: 30px;">Server and Deployment: Apache Tomcat hosts the web application, ensuring scalability and reliability.</li>
+                        <li style="margin-left: 30px;">Data Security: Blockchain prevents unauthorized modifications, and secure access controls ensure appropriate data interaction.</li>
+                    </ul>
+                    <p>Core Modules:</p>
+                    <ul>
+                        <li style="margin-left: 30px;">Farmer Portal: Records crop data and monitors product movement.</li>
+                        <li style="margin-left: 30px;">Distributor and Retailer Portals: Updates logistics data and verifies product quality and authenticity.</li>
+                        <li style="margin-left: 30px;">Consumer Portal: Accesses product information and verifies certifications.</li>
+                        <li style="margin-left: 30px;">Analytics Dashboard: Provides real-time insights into supply chain performance, market trends, product quality metrics, and sustainability data.</li>
+                    </ul>
+                    <p>Benefits:</p>
+                    <ul>
+                        <li style="margin-left: 30px;">Enhanced Trust and Transparency: Ensures all data is consistent and immutable, building trust among stakeholders.</li>
+                        <li style="margin-left: 30px;">Reduced Fraud and Misinformation: Validates product origins and prevents tampering or counterfeiting.</li>
+                        <li style="margin-left: 30px;">Improved Efficiency: Automates repetitive tasks with smart contracts, reducing delays and errors.</li>
+                        <li style="margin-left: 30px;">Informed Decision-Making: Provides accurate market insights for stakeholders to make well-informed decisions.</li>
+                    </ul>
+                    <p>This project showcases the potential of blockchain technology in creating a secure, transparent, and efficient agricultural product supply chain management system.</p>
+                    </details>
                 </li>
                 <li>
                     <h2>Project 3</h2>
@@ -106,8 +290,25 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 My Portfolio Website</p>
+        <p>&copy; 2024 My Portfolio Website</p>
     </footer>
+    <script>
+        document.getElementById('show-btn').addEventListener('click', function() {
+            var authFeatures = document.getElementById('auth-features');
+            if (authFeatures.style.display === 'none') {
+                authFeatures.style.display = 'block';
+            } else {
+                authFeatures.style.display = 'none';
+            }
+        });
+        document.getElementById('show-btn2').addEventListener('click', function() {
+            var authFeatures = document.getElementById('auth-features2');
+            if (authFeatures.style.display === 'none') {
+                authFeatures.style.display = 'block';
+            } else {
+                authFeatures.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
-
