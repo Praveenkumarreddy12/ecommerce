@@ -36,7 +36,7 @@
             margin-bottom: 10px;
         }
         footer {
-            background-color: #333;
+            background-color: #010101;
             color: #fff;
             padding: 10px 0;
             text-align: center;
@@ -48,7 +48,7 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            background-color: #333;
+            background-color: #030303;
             color: #fff;
             padding: 10px 0;
             width: 80%;
@@ -62,25 +62,102 @@
         .navbar a:hover {
             color: #f4f4f4;
         }
+        .bar-graph {
+            width: 100%;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 5px;
+            position: relative;
+        }
+        .bar {
+            height: 20px;
+            border-radius: 5px;
+        }
+        .bar-graph span {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 12px;
+        }
+        .theme-dark {
+            background-color: #333;
+            color: #fff;
+        }
+        .theme-light {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .theme-violet {
+            background-color: #8A2BE2;
+            color: #000;
+        }
+        .theme-indigo {
+            background-color: #4B0082;
+            color: #fff;
+        }
+        .theme-blue {
+            background-color: #0000FF;
+            color: #fff;
+        }
+        .theme-green {
+            background-color: #008000;
+            color: #fff;
+        }
+        .theme-yellow {
+            background-color: #FFFF00;
+            color: #000;
+        }
+        .theme-orange {
+            background-color: #FFA500;
+            color: #000;
+        }
+        .theme-red {
+            background-color: #FF0000;
+            color: #fff;
+        }
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
     </style>
 </head>
-<body>
+<body class="theme-light">
     <div class="navbar">
         <a href="#home">🏠 Home</a>
         <a href="#about">👤 About</a>
         <a href="#skills">💻 Skills</a>
         <a href="#projects">📁 Projects</a>
         <a href="#contact">📧 Contact</a>
+        <label for="theme">theme:</label>
+        <select id="theme" onchange="changeTheme(this.value)">
+            <option value="theme-light">Light</option>
+            <option value="theme-dark">Dark</option>
+            <option value="theme-violet">Violet</option>
+            <option value="theme-indigo">Indigo</option>
+            <option value="theme-blue">Blue</option>
+            <option value="theme-green">Green</option>
+            <option value="theme-yellow">Yellow</option>
+            <option value="theme-orange">Orange</option>
+            <option value="theme-red">Red</option>
+        </select>
     </div>
     <main>
         <section id="home">
+            <h1>Home</h1>
             <h1>Welcome to my portfolio website!</h1>
             <p>This is a brief introduction to who I am and what I do.</p>
         </section>
         <section id="about">
             <h1>About Me</h1>
-            <p>This is a brief overview of my background, skills, and experience.</p>
-            <p>I am a Python full-stack developer with a strong foundation in both back-end and front-end technologies, currently expanding my expertise through a comprehensive course at ScholarLogic. I have hands-on experience developing blockchain solutions to enhance transparency and efficiency in the agricultural supply chain and have built a Django project called My Dairy. I’m proficient in Django and other essential tools. My approach combines strategic analysis, collaborative insights, and a task-oriented focus, enabling me to tackle complex challenges with agility and precision.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <img src="praveen.jpg" alt="Your Name" style="width: 600px; height: 600px; border-radius: 0; border: 10px solid #000; background-color: #fff; margin-right: 50px;">
+                <div>
+                    <p>This is a brief overview of my background, skills, and experience.</p>
+                    <p>I am a Python full-stack developer with a strong foundation in both back-end and front-end technologies, currently expanding my expertise through a comprehensive course at ScholarLogic. I have hands-on experience developing blockchain solutions to enhance transparency and efficiency in the agricultural supply chain and have built a Django project called My Dairy. I’m proficient in Django and other essential tools. My approach combines strategic analysis, collaborative insights, and a task-oriented focus, enabling me to tackle complex challenges with agility and precision.</p>
+                </div>
+            </div>
 
         </section>
         <section id="skills">
@@ -137,25 +214,6 @@
                 </div>
             </li>
         </ul>
-        <style>
-            .bar-graph {
-                width: 100%;
-                height: 20px;
-                background-color: #ccc;
-                border-radius: 5px;
-                position: relative;
-            }
-            .bar {
-                height: 20px;
-                border-radius: 5px;
-            }
-            .bar-graph span {
-                position: absolute;
-                right: 0;
-                top: 0;
-                font-size: 12px;
-            }
-        </style>
         </section>
         <section id="projects">
             <h1>Projects</h1>
@@ -286,6 +344,14 @@
         </section>
         <section id="contact">
             <h1>Get in Touch</h1>
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p>Email: <a href="mailto:praveenkumarreddy1202@gmail.com">praveenkumarreddy1202@gmail.com</a></p>
+                <p>Phone: <a href="tel:+918008693431">+918008693431</a></p>
+                <p>Address: 9-30 Bissaiahgari palli mulakallacheru mandalam annammaya dist AP- 517351</p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/bissaiahgaripraveen" target="_blank">Your LinkedIn Profile</a></p>
+                <p>Github: <a href="https://github.com/Praveenkumarreddy12" target="_blank">Your github Profile</a></p>
+            </div>
             <p>This is a brief overview of how to contact me.</p>
         </section>
     </main>
@@ -293,6 +359,9 @@
         <p>&copy; 2024 My Portfolio Website</p>
     </footer>
     <script>
+        function changeTheme(theme) {
+            document.body.className = theme;
+        }
         document.getElementById('show-btn').addEventListener('click', function() {
             var authFeatures = document.getElementById('auth-features');
             if (authFeatures.style.display === 'none') {
